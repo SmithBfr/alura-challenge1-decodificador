@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    background-color: #F3F5FC;
+}
+
+.logo{
+    padding-top: 40px;
+    padding-left: 40px;
+    gap: 40px;
+
+}
+
+.container{
+    padding: 2% 0% 0% 15%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.container__esquerda{
+    width: 60%;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.container__direita{
+    width: 40%;
+    height: 680px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.521);
+    border-radius: 32px;
+    margin: 40px 40px 40px 100px;
+    padding: 25px;
+}
+
+.container__txt{
+    flex-wrap: wrap;
+    display: flex;
+    align-items:flex-start;
+    padding: 32px;
+    gap: 16px;
+}
+
+.container__txt__entrada::placeholder{
+    color: #0A3871;
+}
+
+.container__txt__entrada{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    background-color: #F3F5FC;
+    border-radius: 4px;
+    width: 100%;
+    height: 700px;
+    padding: 10px;
+    border: none;
+    resize: none;
+}
+
+.container__txt__saida{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    border-color: white;
+    border-radius: 4px;
+    width: 25%;
+    height: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.container__imagem{
+    display: flex;
+    
+    
+}
+
+.retangulo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 944px;
+    top: 40x;
+    left: 1000px;
+    border-radius: 32px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #868E96;
+}
+
+.retangulo__titulo{
+    width: 75%;
+    padding-left: 80px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #343a40;
+    font-size: 24px;
+    align-items: center;
+    gap: 16px;
+}
+
+.retangulo__txt{
+    width: 75%;
+    padding-left: 80px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    
+}
+
+.imagem{
+    margin: 150px 32px 0 32px;
+}
+
+
+.container__buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
+    gap: 32px;
+}
+
+.container__buttons_txt{
+    width: 100%;
+}
+
+.container__button__cri{
+    width: 45%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: top;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 24px;
+    gap: 8px;
+    background-color: #0A3871;
+    color: white;
+}
+
+.container__button__des{
+    width: 45%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: top;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-radius: 24px;
+    gap: 8px;
+    background-color: #d8dfe8;
+    color: #0A3871;
+}
+
+
+
+.texto-criptografado p {
+    overflow: auto;
+}
+
+.sem-retorno img {
+    margin: 150px 32px 0 32px;
+}
+
+.titulo-sem-retorno {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--gray-500);
+
+    margin: 32px 32px 32px 16px;
+}
+
+.resultado{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--gray-400);
+}
+
+.sem-retorno{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray-400);
+}
+
+.texto-criptografado {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.texto-criptografado p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: left;
+    color: var(--gray-400);
+}
+
+.d-none {
+    display: none;
+    pointer-events: none;
+}

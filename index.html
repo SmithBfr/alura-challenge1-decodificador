@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Decodificador</title>
+</head>
+<body>
+    <header>
+        <nav class="logo"><img src="./assets/Vector.png" alt=""></nav>
+    </header>
+    <main class="container">
+        <section class="container__esquerda">
+            <textarea class="container__txt__entrada" placeholder="Digite seu texto" name="escrito" id="escrito" aria-label="Texto para criptografar"></textarea>
+            <div class="container__buttons">
+                <div class="container__buttons_txt">
+                    <img src="./assets/bi_exclamation-circle-fill.png" alt="Exclamation icon">
+                    <label>Apenas letras minúsculas e sem acento.</label>
+                </div>
+                <button class="container__button__cri" type="button" id="cripto" onclick="criptografar()">Criptografar</button>
+                <button class="container__button__des" type="button" id="descripto" onclick="descriptografar()">Descriptografar</button>
+            </div>
+        </section>
+        <section class="container__direita">
+            <div class="sem-retorno" id="resultado__div">
+                <img src="./assets/image.png" id="mensagem-nao-encontrada" alt="Nenhuma mensagem encontrada">
+                <h3 class="titulo-sem-retorno">Nenhuma mensagem encontrada</h3>
+                <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+                <p id="resultado" class="resultado"></p>
+            </div>
+        </section>
+    </main>
+    <script src="./script/script.js"></script>
+</body>
+</html>
