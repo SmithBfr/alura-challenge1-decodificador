@@ -16,11 +16,13 @@ function criptografar() {
     var imagem = document.getElementById("mensagem-nao-encontrada");
     var palavra = document.getElementById("escrito").value;
 
-    console.log(palavra);
+    console.log("Original:", palavra);
 
     // Converter para minúsculas e remover acentos
     palavra = palavra.toLowerCase();
     palavra = removerAcentos(palavra);
+
+    console.log("Normalizado:", palavra);
 
     // Função para aplicar todas as substituições de listaSubstituicao
     function substituirTudo(texto, substituicoes) {
@@ -35,9 +37,9 @@ function criptografar() {
     // Aplicar substituições
     let campoT = substituirTudo(palavra, listaSubstituicao);
 
-    console.log(campoT);
+    console.log("Criptografado:", campoT);
 
-    if (palavra == "") {
+    if (palavra === "") {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
@@ -50,11 +52,13 @@ function descriptografar() {
     var imagem = document.getElementById("mensagem-nao-encontrada");
     var palavra = document.getElementById("escrito").value;
 
-    console.log(palavra);
+    console.log("Original:", palavra);
 
     // Converter para minúsculas e remover acentos
     palavra = palavra.toLowerCase();
     palavra = removerAcentos(palavra);
+
+    console.log("Normalizado:", palavra);
 
     // Função para aplicar todas as substituições de listaSubstituicao
     function substituirTudo(substituicoes, texto) {
@@ -69,7 +73,9 @@ function descriptografar() {
     // Aplicar substituições
     let campoT = substituirTudo(listaSubstituicao, palavra);
 
-    if (palavra == "") {
+    console.log("Descriptografado:", campoT);
+
+    if (palavra === "") {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
