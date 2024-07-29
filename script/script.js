@@ -1,5 +1,3 @@
-let palavra;
-
 let listaSubstituicao = {
     e: "enter",
     i: "imes",
@@ -8,12 +6,21 @@ let listaSubstituicao = {
     u: "ufat"
 };
 
+// Função para remover acentos
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function criptografar() {
     var resultado = document.getElementById("resultado__div");
     var imagem = document.getElementById("mensagem-nao-encontrada");
     var palavra = document.getElementById("escrito").value;
 
     console.log(palavra);
+
+    // Converter para minúsculas e remover acentos
+    palavra = palavra.toLowerCase();
+    palavra = removerAcentos(palavra);
 
     // Função para aplicar todas as substituições de listaSubstituicao
     function substituirTudo(texto, substituicoes) {
@@ -31,13 +38,12 @@ function criptografar() {
     console.log(campoT);
 
     if (palavra == "") {
-        alert("digite algo valido");
+        alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
         resultado.innerHTML = campoT;
     }
 }
-
 
 function descriptografar() {
     var resultado = document.getElementById("resultado__div");
@@ -45,6 +51,10 @@ function descriptografar() {
     var palavra = document.getElementById("escrito").value;
 
     console.log(palavra);
+
+    // Converter para minúsculas e remover acentos
+    palavra = palavra.toLowerCase();
+    palavra = removerAcentos(palavra);
 
     // Função para aplicar todas as substituições de listaSubstituicao
     function substituirTudo(substituicoes, texto) {
@@ -60,7 +70,7 @@ function descriptografar() {
     let campoT = substituirTudo(listaSubstituicao, palavra);
 
     if (palavra == "") {
-        alert("digite algo valido");
+        alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
         resultado.innerHTML = campoT;
