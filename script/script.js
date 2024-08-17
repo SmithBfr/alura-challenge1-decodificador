@@ -12,8 +12,9 @@ function removerAcentos(texto) {
 }
 
 function criptografar() {
-    var resultado = document.getElementById("resultado__div");
+    var resultado = document.getElementById("resultado");
     var imagem = document.getElementById("mensagem-nao-encontrada");
+    var botaoCopiar = document.getElementById("copiar");
     var palavra = document.getElementById("escrito").value;
 
     console.log("Original:", palavra);
@@ -43,13 +44,15 @@ function criptografar() {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
-        resultado.innerHTML = campoT;
+        resultado.innerText = campoT;
+        botaoCopiar.classList.remove("d-none");  // Exibe o botão de copiar
     }
 }
 
 function descriptografar() {
-    var resultado = document.getElementById("resultado__div");
+    var resultado = document.getElementById("resultado");
     var imagem = document.getElementById("mensagem-nao-encontrada");
+    var botaoCopiar = document.getElementById("copiar");
     var palavra = document.getElementById("escrito").value;
 
     console.log("Original:", palavra);
@@ -79,6 +82,20 @@ function descriptografar() {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
-        resultado.innerHTML = campoT;
+        resultado.innerText = campoT;
+        botaoCopiar.classList.remove("d-none");  // Exibe o botão de copiar
+    }
+}
+
+function copiarTexto() {
+    const texto = document.getElementById("resultado").innerText;
+    if (texto) {
+        navigator.clipboard.writeText(texto).then(() => {
+            alert("Texto copiado para a área de transferência!");
+        }).catch(err => {
+            console.error("Erro ao copiar texto: ", err);
+        });
+    } else {
+        alert("Nenhum texto para copiar!");
     }
 }

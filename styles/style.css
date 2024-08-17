@@ -1,61 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: "Inter", sans-serif;
     background-color: #F3F5FC;
 }
 
-.logo{
-    padding-top: 40px;
-    padding-left: 40px;
-    gap: 40px;
-
+.logo {
+    padding: 40px;
 }
 
-.container{
+.container {
     padding: 2% 0% 0% 15%;
     display: flex;
     flex-direction: row;
-    
+    gap: 40px;
 }
 
-.container__esquerda{
+.container__esquerda {
     width: 60%;
-    height: 100%;
     padding-top: 40px;
 }
 
-.container__direita{
+.container__direita {
     width: 40%;
     height: 680px;
     text-align: center;
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.521);
     border-radius: 32px;
-    margin: 40px 40px 40px 100px;
+    margin: 40px;
     padding: 25px;
 }
 
-.container__txt{
+.container__txt {
     flex-wrap: wrap;
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     padding: 32px;
     gap: 16px;
 }
 
-.container__txt__entrada::placeholder{
+.container__txt__entrada::placeholder {
     color: #0A3871;
 }
 
-.container__txt__entrada{
+.container__txt__entrada {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 32px;
@@ -68,7 +63,7 @@ body{
     resize: none;
 }
 
-.container__txt__saida{
+.container__txt__saida {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 32px;
@@ -81,93 +76,81 @@ body{
     display: none;
 }
 
-.container__imagem{
+.container__imagem {
     display: flex;
-    
-    
 }
 
-.retangulo{
+.retangulo {
     display: flex;
     flex-wrap: wrap;
     width: 400px;
     height: 944px;
-    top: 40x;
-    left: 1000px;
     border-radius: 32px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid black;
     background-color: #868E96;
 }
 
-.retangulo__titulo{
+.retangulo__titulo {
     width: 75%;
     padding-left: 80px;
     font-family: "Inter", sans-serif;
     font-weight: 700;
     color: #343a40;
     font-size: 24px;
-    align-items: center;
-    gap: 16px;
+    margin-bottom: 16px;
 }
 
-.retangulo__txt{
+.retangulo__txt {
     width: 75%;
     padding-left: 80px;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    
 }
 
-.imagem{
+.imagem {
     margin: 150px 32px 0 32px;
 }
 
-
-.container__buttons{
+.container__buttons {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:flex-start;
-    justify-content: center;
+    justify-content: space-between;
     gap: 32px;
 }
 
-.container__buttons_txt{
-    width: 100%;
-}
-
-.container__button__cri{
+.container__button__cri,
+.container__button__des {
     width: 45%;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    text-align: top;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    text-align: center;
+    padding: 24px;
     border-radius: 24px;
-    gap: 8px;
+}
+
+.container__button__cri {
     background-color: #0A3871;
     color: white;
 }
 
-.container__button__des{
-    width: 45%;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: top;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    border-radius: 24px;
-    gap: 8px;
+.container__button__des {
     background-color: #d8dfe8;
     color: #0A3871;
 }
 
-
+.container__button__copiar {
+    background-color: #0A3871;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    padding: 24px;
+    border-radius: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
 
 .texto-criptografado p {
     overflow: auto;
@@ -182,26 +165,25 @@ body{
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
-    color: var(--gray-500);
-
+    color: #6c757d;
     margin: 32px 32px 32px 16px;
 }
 
-.resultado{
+.resultado {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    color: var(--gray-400);
+    color: #adb5bd;
 }
 
-.sem-retorno{
+.sem-retorno {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: var(--gray-400);
+    color: #adb5bd;
 }
 
 .texto-criptografado {
@@ -218,10 +200,69 @@ body{
     font-size: 20px;
     line-height: 150%;
     text-align: left;
-    color: var(--gray-400);
+    color: #adb5bd;
 }
 
 .d-none {
     display: none;
     pointer-events: none;
+}
+
+/* Media Queries */
+/* Para telas de até 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 2% 5%;
+    }
+
+    .container__direita {
+        margin: 40px auto;
+    }
+
+    .container__buttons {
+        flex-direction: column;
+    }
+
+    .container__button__cri,
+    .container__button__des {
+        width: 100%;
+    }
+
+    .retangulo {
+        width: 100%;
+    }
+}
+
+/* Para telas de até 480px */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 2%;
+    }
+
+    .container__direita {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .container__txt__entrada {
+        font-size: 24px;
+        height: 300px;
+    }
+
+    .retangulo {
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    .imagem {
+        margin: 50px 16px 0 16px;
+    }
+
+    .container__button__cri,
+    .container__button__des {
+        width: 100%;
+        font-size: 14px;
+        padding: 16px;
+    }
 }
