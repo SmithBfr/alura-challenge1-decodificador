@@ -61,8 +61,3 @@ Tópicos abordados durante o desafio:
     - Utilizar o @import para utilizar os estilos css de cada grupo de elementos em um unico arquivo css.
     - Utilizar pasta de midias e fotos (assets).
     - Utilizar pseudo-elementos e pseudo-classes.
-Techs Utilizadas:
-CSS3 HTML5 JavaScript Visual Studio Code
-
-Contato:
-LinkedIn
