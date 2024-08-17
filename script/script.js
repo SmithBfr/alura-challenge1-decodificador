@@ -11,13 +11,21 @@ function removerAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+// Função para limpar a div do resultado
+function limparResultado() {
+    var resultadoDiv = document.getElementById("resultado__div");
+    resultadoDiv.innerHTML = "";  // Limpa o conteúdo da div
+}
+
 function criptografar() {
-    var resultado = document.getElementById("resultado");
+    var resultadoDiv = document.getElementById("resultado__div");
     var imagem = document.getElementById("mensagem-nao-encontrada");
-    var botaoCopiar = document.getElementById("copiar");
     var palavra = document.getElementById("escrito").value;
 
     console.log("Original:", palavra);
+
+    // Limpar o conteúdo da div do resultado
+    limparResultado();
 
     // Converter para minúsculas e remover acentos
     palavra = palavra.toLowerCase();
@@ -44,18 +52,23 @@ function criptografar() {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
-        resultado.innerText = campoT;
-        botaoCopiar.classList.remove("d-none");  // Exibe o botão de copiar
+        resultadoDiv.innerHTML = campoT;
+
+        // Exibir botão de copiar
+        var copiarBotao = document.getElementById("copiar");
+        copiarBotao.classList.remove("d-none");
     }
 }
 
 function descriptografar() {
-    var resultado = document.getElementById("resultado");
+    var resultadoDiv = document.getElementById("resultado__div");
     var imagem = document.getElementById("mensagem-nao-encontrada");
-    var botaoCopiar = document.getElementById("copiar");
     var palavra = document.getElementById("escrito").value;
 
     console.log("Original:", palavra);
+
+    // Limpar o conteúdo da div do resultado
+    limparResultado();
 
     // Converter para minúsculas e remover acentos
     palavra = palavra.toLowerCase();
@@ -82,20 +95,30 @@ function descriptografar() {
         alert("Digite algo válido");
     } else {
         imagem.style.display = "none";
-        resultado.innerText = campoT;
-        botaoCopiar.classList.remove("d-none");  // Exibe o botão de copiar
+        resultadoDiv.innerHTML = campoT;
+
+        // Exibir botão de copiar
+        var copiarBotao = document.getElementById("copiar");
+        copiarBotao.classList.remove("d-none");
     }
 }
 
 function copiarTexto() {
-    const texto = document.getElementById("resultado").innerText;
-    if (texto) {
-        navigator.clipboard.writeText(texto).then(() => {
-            alert("Texto copiado para a área de transferência!");
-        }).catch(err => {
-            console.error("Erro ao copiar texto: ", err);
-        });
-    } else {
-        alert("Nenhum texto para copiar!");
-    }
+    var resultado = document.getElementById("resultado__div").innerText;
+
+    // Cria um elemento de texto temporário para copiar o conteúdo
+    var elementoTemporario = document.createElement("textarea");
+    elementoTemporario.value = resultado;
+    document.body.appendChild(elementoTemporario);
+
+    // Seleciona e copia o texto
+    elementoTemporario.select();
+    document.execCommand("copy");
+
+    // Remove o elemento temporário
+    document.body.removeChild(elementoTemporario);
+
+    // Recarrega a página
+    window.location.reload();
 }
+
